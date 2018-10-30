@@ -9,9 +9,9 @@ import yahoofinance.YahooFinance;
 
 public class Ticker {
 	
-	public static void main(String[] args) throws IOException {
+	public static String ticker() throws IOException {
 	
-		String[] symbols = {"JNK", "VNQ", "BLV", "BSV", "SPY", "^GSPC"};
+		String[] symbols = {"AAPL", "VNQ", "BLV", "BSV", "SPY"};
 		String name;
 		String symbol;
 		BigDecimal price;
@@ -26,10 +26,9 @@ public class Ticker {
 			symbol = sbl;
 			price = stock.getQuote().getPrice();
 			change = stock.getQuote().getChangeInPercent();
-			ticker += name + " (" + symbol + ") " + price + " " + change + "%   ";
+			ticker += "   " + name + " (" + symbol + ") " + price + " " + change + "%";
 		}
-		System.out.print(ticker);
-	
+		return ticker;	
 	}
 	
 }
